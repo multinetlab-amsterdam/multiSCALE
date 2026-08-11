@@ -1,0 +1,3 @@
+[submodule "MuxVizPy"]
+	path = MuxVizPy
+	url = https://github.com/CoMuNeLab/MuxVizPy.git
