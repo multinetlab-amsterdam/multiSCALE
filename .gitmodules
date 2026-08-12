@@ -1,0 +1,3 @@
+[submodule "MuxVizPy"]
+	path = MuxVizPy
+	url = git@github.com:multinetlab-amsterdam/MuxVizPy.git
