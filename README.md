@@ -54,6 +54,20 @@ MultiSCALE can accept as input:
 * one or multiple `.csv` where the rows are observations and columns are variables
 * one or multiple folders which have `.csv` corresponding to connectivity matrices of individual subjects
 
+## Usage
+
+One can use the followng command to display the arguments: `python -m src.workflow -h`. 
+
+Based on the input data:
+* A supra-adjacency matrix `.mat`
+One can directly compute a multilayer network metric, e.g., bridge strength, in the folder `results` as an output file `bridge_strength_rand` as: `python -m src.workflow --function bridge_strength -fname supra_randmst.mat -o bridge_strength_rand -od results -l 5 -s 210 210 210 210 210`. 
+* Two `.csv`: 
+One can choose different values for the following arguments: `-corr`, `-omst`, `-thr`.
+One important argument is `-l_RCCA`. The user will need to design a JSON file containing the regularization parameter lambda for each pairwise input data when computing RCCA, see -help for more details, and the example file `RCCA_params.json`.
+
+Once all arguments have been determined, the user can adapt the following command for his/her own usage: `python -m src.workflow -fname file1.csv file2.csv -l 2 -s 210 210 -omst 0 1 1 1 1 1 -thr 0.1 -l_RCCA RCCA_params.json -l1_rsa 10 -pol pos`. 
+
+If the user wants to directly manipulate the functions from the toolbox in an IDE, one can take a look at the tutorial.ipynb for an example on how to use them based on synthetic data. 
 ## License
 
 MultiSCALE is licensed under the GPL-3.0 license.
