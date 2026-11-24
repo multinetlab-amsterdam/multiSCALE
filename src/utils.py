@@ -53,7 +53,7 @@ def svd_sign_flip(X):
         
     return U, S, V
 
-def save_csv(data, name, tag, output_directory):
+def save_csv(data, name, output_directory):
     """
     Save as a .csv.
     

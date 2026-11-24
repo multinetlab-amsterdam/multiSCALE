@@ -27,7 +27,7 @@ FUNCTIONS = {
 }
 
 def process_input_data(input_data):
-    if len(input_data) == 1 and ".mat" in input_data[0]: 
+    if len(input_data) == 1 and ".mat" in input_data[0]:
         return scipy.io.loadmat(input_data[0])
     else: 
         data = []
@@ -138,7 +138,7 @@ def multilayer(function, data, filename, output_directory, layers, N):
     else:
         temp = list(function(data, layers, N))
         
-    # utils.save_csv(temp, filename, output_directory)
+    utils.save_csv(temp, filename, output_directory)
     return temp
 
 def main(argv=None):
@@ -158,8 +158,7 @@ def main(argv=None):
     
     ## supra adjacency matrix 
     if len(options.filename) == 1 and ".mat" in options.filename[0]: 
-        name = list(data.keys())[-1]
-        supra = data[name]
+        supra = data[options.mat_name]
     ## RCCA + RSA
     else:
         ### OMST, consensus, partial correlations
@@ -253,7 +252,7 @@ def main(argv=None):
         supra = model.build_supra_adjacency(intra_layers, interlayer_links, options.layer_size)
     
     filename=options.function + "_" + options.output_filename
-    print("Saving", filename)
+    print("Saving in", options.output_directory, filename)
     if len(supra.shape)==2:
         Data=supra
     else:

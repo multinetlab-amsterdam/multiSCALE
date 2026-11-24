@@ -60,7 +60,7 @@ One can use the followng command to display the arguments: `python -m src.workfl
 
 Based on the input data:
 * A supra-adjacency matrix `.mat`
-One can directly compute a multilayer network metric, e.g., bridge strength, in the folder `results` as an output file `bridge_strength_rand` as: `python -m src.workflow --function bridge_strength -fname supra_randmst.mat -o bridge_strength_rand -od results -l 5 -s 210 210 210 210 210`. 
+One can directly compute a multilayer network metric, e.g., bridge strength, in the folder `results` as an output file `bridge_strength_rand` as: `python -m src.workflow --function bridge_strength -fname supra_randmst.mat -mn supra -o bridge_strength_rand -od results -l 5 -s 210 210 210 210 210`. 
 * Two `.csv`: 
 One can choose different values for the following arguments: `-corr`, `-omst`, `-thr`.
 One important argument is `-l_RCCA`. The user will need to design a JSON file containing the regularization parameter lambda for each pairwise input data when computing RCCA, see -help for more details, and the example file `RCCA_params.json`.

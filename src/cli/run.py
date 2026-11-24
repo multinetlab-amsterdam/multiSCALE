@@ -59,6 +59,17 @@ def _get_parser():
         ),
         default="results",
     )
+    opt_in.add_argument(
+        "-mn",
+        "--mat-name",
+        dest="mat_name",
+        type=str,
+        help=(
+            "Name of the matrix given to the .mat (if given as input). "
+            "Default is 'supra'."
+        ),
+        default="supra"
+    )
     
     opt_in_proc = parser.add_argument_group("Optional Arguments for Input Processing")
     opt_in_proc.add_argument(
